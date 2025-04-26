@@ -1,0 +1,62 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contacto</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Contacto</h1>
+      <form>
+        <label>
+          Nombre:<br />
+          <input type="text" name="name" />
+        </label><br /><br />
+        <label>
+          Email:<br />
+          <input type="email" name="email" />
+        </label><br /><br />
+        <label>
+          Mensaje:<br />
+          <textarea name="message"></textarea>
+        </label><br /><br />
+        <button type="submit">Enviar</button>
+      </form>
+    </main>
+    <Footer />
+
+    <style>
+        main {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-height: calc(100vh - 160px);
+          padding: 2rem;
+        }
+  
+        form {
+          width: 100%;
+          max-width: 400px;
+        }
+  
+        input, textarea {
+          width: 100%;
+          padding: 0.5rem;
+          margin-top: 0.25rem;
+          box-sizing: border-box;
+        }
+  
+        button {
+          display: block;  
+          margin-top: 1rem;
+          padding: 0.5rem 1rem;
+        }
+    </style>
+
+  </body>
+</html>

@@ -1,5 +1,6 @@
 ---
-
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -8,9 +9,14 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Inicio</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
-	</body>
+		<Header />
+		<main>
+		  <h1>¡Bienvenido a mi página web!</h1>
+		  <p>Mi primer proyecto con Astro.</p>
+		</main>
+		<Footer />
+	  </body>
 </html>
