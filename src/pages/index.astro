@@ -1,22 +1,7 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayouts from "../layouts/BaseLayouts.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Inicio</title>
-	</head>
-	<body>
-		<Header />
-		<main>
-		  <h1>¡Bienvenido a mi página web!</h1>
-		  <p>Mi primer proyecto con Astro.</p>
-		</main>
-		<Footer />
-	  </body>
-</html>
+<BaseLayouts title="Inicio">
+	<h1>¡Bienvenido a mi página web</h1>
+</BaseLayouts>
