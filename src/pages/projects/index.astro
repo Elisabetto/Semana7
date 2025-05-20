@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import projects from '../../content/projects.json';
+---
+<BaseLayout title="Proyectos">
+  <main class="container">
+    <h1>Proyectos</h1>
+    <ul>
+      {projects.map(p => (
+        <li style="margin-bottom: var(--space-sm);">
+          <a href={`/projects/${p.slug}`}>
+            <strong>{p.title}</strong>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>

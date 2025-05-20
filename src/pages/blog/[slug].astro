@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths(): Promise<{ params: { slug: string } }[]> {
+  const posts = await Astro.glob('../../content/posts/*.md');
+
+  return posts.map((post) => {
+    const filename = post.file.split('/').pop()!;
+    const slug = filename.replace(/\.md$/, '');
+    return { params: { slug } };
+  });
+}
+const posts = await Astro.glob('../../content/posts/*.md');
+const { slug } = Astro.params;
+const post = posts.find((p) => p.file.endsWith(`${slug}.md`));
+if (!post) {
+  throw new Error(`No existe post con slug “${slug}”`);
+}
+const { frontmatter, Content } = post;
+---
+<BaseLayout title={frontmatter.title}>
+  <main class="container">
+    <article>
+      <h1>{frontmatter.title}</h1>
+      {frontmatter.date && (
+        <time datetime={frontmatter.date}>{frontmatter.date}</time>
+      )}
+      <div class="prose" style="margin-top: var(--space-md);">
+        <Content />
+      </div>
+    </article>
+  </main>
+</BaseLayout>

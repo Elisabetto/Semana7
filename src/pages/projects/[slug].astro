@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import projects from '../../content/projects.json';
+
+export async function getStaticPaths(): Promise<{ params: { slug: string } }[]> {
+  return projects.map((p) => ({
+    params: { slug: p.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const project = projects.find((p) => p.slug === slug);
+
+if (!project) {
+  throw new Error(`No existe proyecto con slug “${slug}”`);
+}
+const { title } = project;
+---
+<BaseLayout title={title}>
+    <main class="container">
+      <article>
+        <h1>{title}</h1>
+      </article>
+    </main>
+  </BaseLayout>

@@ -1,0 +1,5 @@
+[
+    { "slug": "blog-astro", "title": "Blog con Astro" },
+    { "slug": "recetario-cocina", "title": "Recetario de cocina" },
+    { "slug": "planificador-comidas", "title": "Planificador Semanal de Comidas" }
+  ]

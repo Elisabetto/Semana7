@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = await Astro.glob('../../content/posts/*.md');
+
+const items = posts.map(post => {
+  const filename = post.file.split('/').pop()!;
+  const slug = filename.replace(/\.md$/, '');
+
+  return {
+    slug,
+    title: post.frontmatter.title,
+    date: post.frontmatter.date,
+  };
+});
+---
+<BaseLayout title="Blog">
+  <main class="container">
+    <h1>Blog</h1>
+    <ul>
+      {items.map(({ slug, title, date }) => (
+        <li style={{ marginBottom: 'var(--space-sm)' }}>
+          <a href={`/blog/${slug}`}>
+            <strong>{title}</strong>{date && <small> — {date}</small>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
