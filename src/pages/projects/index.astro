@@ -1,18 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import projects from '../../content/projects.json';
+import Card from '../../components/Card.astro';
 ---
 <BaseLayout title="Proyectos">
   <main class="container">
     <h1>Proyectos</h1>
-    <ul>
-      {projects.map(p => (
-        <li style="margin-bottom: var(--space-sm);">
-          <a href={`/projects/${p.slug}`}>
-            <strong>{p.title}</strong>
-          </a>
-        </li>
-      ))}
-    </ul>
+    <Card
+      title="Blog con Astro"
+      description="Un blog estático construido con Astro."
+      link="/blog"
+    />
+    <Card
+      title="Recetario de Cocina"
+      description="Blog de recetas en Markdown."
+      link="/recipes/recetario-cocina"
+    />
+    <Card
+      title="Planificador de Comidas"
+      description="Genera menús semanales."
+      link="/projects/planificador-comidas"
+    />
   </main>
 </BaseLayout>

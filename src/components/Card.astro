@@ -1,0 +1,18 @@
+---
+export interface Props {
+    title: string;
+    description?: string;
+    link?: string;
+    }
+const { title, description, link } = Astro.props as Props;
+---
+<article>
+    {link ? (
+        <a href={link} class="card-link">
+            <h2>{title}</h2>
+        </a>
+    ) : (
+        <h2>{title}</h2>
+    )}
+    {description && <p>{description}</p>}
+</article>
