@@ -14,12 +14,13 @@ const project = projects.find((p) => p.slug === slug);
 if (!project) {
   throw new Error(`No existe proyecto con slug “${slug}”`);
 }
-const { title } = project;
+const { title, description } = project;
 ---
 <BaseLayout title={title}>
     <main class="container">
       <article>
         <h1>{title}</h1>
+        <p>{description}</p>
       </article>
     </main>
   </BaseLayout>

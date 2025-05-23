@@ -1,5 +1,5 @@
 [
-    { "slug": "blog-astro", "title": "Blog con Astro" },
-    { "slug": "recetario-cocina", "title": "Recetario de cocina" },
-    { "slug": "planificador-comidas", "title": "Planificador Semanal de Comidas" }
+    { "slug": "blog-astro", "title": "Blog con Astro", "description":"Un blog estático construido con Astro." },
+    { "slug": "recetario-cocina", "title": "Recetario de cocina", "description": "Blog de recetas en Markdown." },
+    { "slug": "planificador-comidas", "title": "Planificador Semanal de Comidas", "description": "Genera menús semanales." }
   ]

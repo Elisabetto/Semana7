@@ -1,10 +1,10 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const posts = await Astro.glob('../../content/posts/*.md');
+const posts = await Astro.glob("../../content/posts/*.md");
 
 const items = posts.map(post => {
-  const filename = post.file.split('/').pop()!;
+  const filename = post.file.split("/").pop()!;
   const slug = filename.replace(/\.md$/, '');
 
   return {
@@ -19,7 +19,7 @@ const items = posts.map(post => {
     <h1>Blog</h1>
     <ul>
       {items.map(({ slug, title, date }) => (
-        <li style={{ marginBottom: 'var(--space-sm)' }}>
+        <li style={{ marginBottom: "var(--space-sm)" }}>
           <a href={`/blog/${slug}`}>
             <strong>{title}</strong>{date && <small> — {date}</small>}
           </a>

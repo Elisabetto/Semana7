@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css"
 const {title} = Astro.props;
 ---
 <!DOCTYPE html>
@@ -8,8 +9,7 @@ const {title} = Astro.props;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title ? `${title} | Blog de Elisabet Torres` : 'Blog de Elisabet Torres'}</title>
-    <link rel="stylesheet" href="/styles/global.css" />
+    <title>{title ? `${title} | Blog de Elisabet Torres` : "Blog de Elisabet Torres"}</title>
 </head>
 <body>
     <Header />

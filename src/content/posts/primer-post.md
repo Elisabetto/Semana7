@@ -1,6 +1,6 @@
 ---
 title: 'Mi primer post'
-date: "2025-04-27"
+date: '2025-04-2'
 description: 'Este es la primera publicación de mi nuevo blog Astro.'
 author: 'Elisabet Torres'
 ---

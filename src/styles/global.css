@@ -1,69 +1,91 @@
+/* Variables de color y tipografía */
 :root {
-    --color-bg:    #f9f9f9;
-    --color-text:  #333;
-    --color-accent:#0070f3;
-    --font-base:   system-ui, sans-serif;
-    --space-xxs:   0.25rem;
-    --space-xs:    0.5rem;
-    --space-sm:    1rem;
-    --space-md:    1.5rem;
-    --space-lg:    2rem;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: var(--font-base);
-    line-height: 1.6;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-  }
-  
-  a {
-    color: var(--color-accent);
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--space-md) 0;
-  }
-  
-  h1, h2, h3 {
-    margin-bottom: var(--space-sm);
-  }
+  --color-bg: #f9f9f9;
+  --color-text: #333;
+  --color-accent: #505050;
+  --font-base: system-ui, sans-serif;
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+}
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 0.2rem;
-    margin-top: 0.25rem;
-    box-sizing: border-box;
-  }
-  
- .contact-form button {
-    display: block;
-    margin: 1rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Layout principal */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-md) 0;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  margin-bottom: var(--space-sm);
+}
+h1 {
+  text-align: center;
+  border-bottom: solid black;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.2rem;
+  margin-top: var(--space-xxs);
+  box-sizing: border-box;
+}
+.contact-form button {
+  margin: 2rem ;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* Botón interactivo “Me gusta” */
+.interactive-button {
+  background: transparent;
+  border: 1px solid var(--color-text);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+.interactive-button .heart {
+  margin-right: var(--space-xs);
+  color: var(--color-text);
+  transition: color 0.2s;
+}
+.interactive-button.liked .heart {
+  color: #e63946;
+}
+
+p {
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.prose {
+  font-size: 1rem;
+  line-height: 1.8;
+}

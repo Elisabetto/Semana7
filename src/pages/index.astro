@@ -1,7 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import InteractiveButton from "../components/InteractiveButton"
 ---
-
 <BaseLayout title="Inicio">
-	<h1>¡Bienvenido a mi página web</h1>
+	<main class="container">
+		<h1>Blog con Astro</h1>
+		<h2>Bienvendio a mi blog</h2>
+		<p>Prueba el botón de 'Me gusta'</p>
+		<InteractiveButton client:load/>
+	</main>
 </BaseLayout>
